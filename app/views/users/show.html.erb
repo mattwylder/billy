@@ -1,3 +1,4 @@
+<% provide(:title, @user.name) %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -5,10 +6,15 @@
   <%= @user.name %>
 </p>
 
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
+<div class="col-md-8">
+    <% if @user.billythoughts.any? %>
+        <h3> Billythoughts </h3>
+        <ol class="billythoughts">
+            <%= render @billythoughts %>
+        </ol>
+        <%= will_paginate @billythoughts %>
+    <% end %>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

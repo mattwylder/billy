@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+# pagination
+gem 'will_paginate'
 # to use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 

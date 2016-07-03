@@ -1,0 +1,5 @@
+<li id="billythought-<%= billythought.id %>" >
+<span class="user"><%= link_to billythought.user.name, billythought.user %></span>
+    <span class="content"><%= billythought.content%></span>
+    <span class="timestamp">Posted <%= time_ago_in_words(billythought.created_at) %> ago</span>
+</li>
