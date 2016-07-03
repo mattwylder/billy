@@ -1,11 +1,13 @@
 class SessionsController < ApplicationController
+    include SessionsHelper
   def new
   end
 
   def create
-      user = User.find_by(name: params[:session][:email].downcase)
+      user = User.find_by(name: params[:session][:name].downcase)
       if user && user.authenticate(params[:session][:password])
-          #log in and show user 
+          log_in user
+          redirect_to user
       else
           flash[:danger] = 'bill dont like'
           render 'new'
@@ -14,4 +16,5 @@ class SessionsController < ApplicationController
 
   def destroy
   end
+
 end
