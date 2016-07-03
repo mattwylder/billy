@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+    has_many :billythoughts, dependent: :destroy
 
     attr_accessor :remember_token
     validates :name, presence: true, uniqueness: true
