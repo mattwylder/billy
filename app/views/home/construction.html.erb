@@ -1,7 +1,3 @@
-<h1>Billy's CLub is under construction!!</h1>
-<p>sorry</p>
-<img alt="Rails" src="/assets/images/poo.gif" />
-
 <% if logged_in? %>
     <div class="row">
         <aside class="col-md-4">
@@ -9,5 +5,18 @@
         <%= render 'shared/billythought_form' %>
         </aside>
     </div>
+
+<div class="col-md-8">
+        <h3> Billythoughts </h3>
+        <ol class="billythoughts">
+            <%= render @billythoughts %>
+        </ol>
+</div>
+<% else %>
+    <%= link_to "login", login_path %> 
 <% end %>
+
+<h1>Billy's CLub is under construction!!</h1>
+<p>be warned!</p>
+<img alt="Rails" src="/assets/images/poo.gif" />
 
