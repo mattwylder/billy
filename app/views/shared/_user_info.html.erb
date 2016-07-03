@@ -2,4 +2,4 @@
 <span><%= link_to current_user.name, current_user %> </span>
 you have 
 <span><%= pluralize(current_user.billythoughts.count, "billythought" )%></span>
-<%= link_to "logout", log_out %>
+<%= link_to "logout", logout_path, method: "delete" %>
