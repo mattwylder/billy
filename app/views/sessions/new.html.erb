@@ -1,2 +1,15 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<h1> come into the billy club </h1>
+<h2> we'd like the company!!!</h2>
+<p>just use your designated bILLYNAME™ and BILLYPASS™ to enter billy's club!then press the enter button. it couldn't be easier ;)
+
+<div class="row">
+    <%= form_for(:session, url: login_path) do |f| %>
+        <%= f.label :name %>
+        <%= f.email_field :name %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+
+        <%= f.submit "<button>log in!</button>" %>
+    <% end %>
+
