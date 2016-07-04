@@ -14,6 +14,18 @@ class BillythoughtsController < ApplicationController
     def destroy
     end
 
+    def doodooblast
+        @billythought = Billythought.find(params[:id])
+        @billythought.increment!(:doodooblasts, by = 1) 
+        redirect_back_or root_url
+    end
+
+    def namaste
+        @billythought = Billythought.find(params[:id])
+        @billythought.increment!(:namastes, by = 1)
+        redirect_back_or root_url
+    end
+
     private
 
     def billythought_params

@@ -1,17 +1,23 @@
+<style>
+    table {
+        background-color: #FF0000
+    }
+</style>
 <table width="400", border="3">
     <tr><td>
             <b><%=link_to billythought.user.name, billythought.user %></b> - <%= time_ago_in_words(billythought.created_at) %> ago
     </td></tr>
     <tr><td>
         <p>
+        <%= billythought.get_background_color %>
         <%= billythought.content %>
         </p>
     </td></tr>
     <tr><td>
         <table>
             <tr>
-                <td> 💩 doodooblast</td>
-                <td> | 🙏 namaste </td> 
+                <td> <%= billythought.doodooblasts %> 💩 <%= link_to "doodooblast", doodoo_path(billythought), :method => :patch %> </td>
+                <td> | <%= billythought.namastes %> 🙏  <%= link_to "namaste", namaste_path(billythought), :method => :patch %> </td> 
                 <% if current_user %>
                     <td> | delete</td>
                     <td> |  edit </td>
