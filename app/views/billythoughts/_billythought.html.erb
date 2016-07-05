@@ -1,4 +1,4 @@
-<table width="400", border="3", bgcolor="#<%= billythought.get_background_color %>">
+<table width="400", border="3", bgcolor="<%= billythought.get_background_color %>">
     <tr><td>
             <b><%=link_to billythought.user.name, billythought.user %></b> - <%= time_ago_in_words(billythought.created_at) %> ago
     </td></tr>
